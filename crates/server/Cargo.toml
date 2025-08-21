@@ -1,0 +1,29 @@
+[package]
+name = "container-codes-server"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "container-codes-server"
+path = "src/main.rs"
+
+[dependencies]
+container-codes-shared = { path = "../shared" }
+tokio = { workspace = true }
+axum = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+hyper = { workspace = true }
+rustls = { workspace = true }
+rustls-acme = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+mime_guess = { workspace = true }
+futures = { workspace = true }
+bytes = { workspace = true }

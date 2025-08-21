@@ -1,0 +1,15 @@
+[package]
+name = "container-codes-proxy"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+container-codes-shared = { path = "../shared" }
+tokio = { workspace = true }
+axum = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+hyper = { workspace = true }
+serde = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }

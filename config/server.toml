@@ -1,0 +1,67 @@
+[server]
+host = "127.0.0.1"
+port = 8080
+workers = 0
+
+[server.tls]
+enabled = false
+auto_cert = false
+domains = []
+acme_directory = "https://acme-v02.api.letsencrypt.org/directory"
+
+[server.static_files]
+enabled = true
+root = "./public"
+index_files = ["index.html", "index.htm"]
+compression = true
+compression_types = ["text/html", "text/css", "application/javascript", "application/json"]
+cache_control = "public, max-age=3600"
+etag = true
+
+[server.security]
+cors_origins = ["*"]
+cors_methods = ["GET", "POST", "PUT", "DELETE"]
+cors_headers = ["Content-Type", "Authorization"]
+rate_limit_enabled = false
+rate_limit_requests = 100
+rate_limit_window = "1m"
+security_headers = true
+hsts_max_age = 31536000
+content_type_nosniff = true
+frame_options = "DENY"
+xss_protection = true
+
+[logging]
+level = "info"
+format = "pretty"
+output = "stdout"
+rotation = "daily"
+max_files = 30
+
+[logging.tracing]
+enabled = false
+service_name = "container-codes"
+sample_rate = 0.1
+
+[database]
+url = ""
+max_connections = 50
+min_connections = 5
+connection_timeout = "30s"
+idle_timeout = "10m"
+max_lifetime = "1h"
+auto_migrate = false
+migration_path = "./migrations"
+
+[redis]
+url = ""
+pool_size = 50
+connection_timeout = "5s"
+command_timeout = "30s"
+retry_attempts = 3
+
+[redis.queue]
+default_queue = "jobs"
+retry_queue = "retry"
+failed_queue = "failed"
+max_retries = 3

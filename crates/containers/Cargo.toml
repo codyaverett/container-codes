@@ -1,0 +1,13 @@
+[package]
+name = "container-codes-containers"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+container-codes-shared = { path = "../shared" }
+tokio = { workspace = true }
+bollard = { workspace = true }
+serde = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+futures = { workspace = true }

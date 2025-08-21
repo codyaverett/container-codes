@@ -1,0 +1,17 @@
+[package]
+name = "container-codes-cli"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "container-codes"
+path = "src/main.rs"
+
+[dependencies]
+container-codes-shared = { path = "../shared" }
+tokio = { workspace = true }
+clap = { workspace = true }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
